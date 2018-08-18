@@ -115,6 +115,11 @@ BtMorph requires that the compartments with indices 1, 2, and 3 all be of type 1
 by NeuroMorpho.org.
 
 6) Install parallel hdf5 (recommend version 1.8) from source:
+
+ez mode: conda install h5py
+
+-OR-
+
 https://support.hdfgroup.org/HDF5/release/obtainsrc518.html#conf
 
 Make sure that 'which mpicc' refers to the above mpich installation directory.
@@ -126,7 +131,7 @@ http://docs.h5py.org/en/latest/mpi.html
 mkdir /usr/local/hdf5
 cd /usr/local/hdf5
 export CC=mpicc
-./configure --enable-parallel --enable-shared --prefix=/usr/local/hdf5
+./configure --enable-parallel --enable-shared --prefix=/usr
 make
 make check
 make install
