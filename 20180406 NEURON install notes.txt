@@ -123,10 +123,16 @@ https://support.hdfgroup.org/ftp/HDF5/current/src/unpacked/release_docs/INSTALL_
 and
 http://docs.h5py.org/en/latest/mpi.html
 
+#Install zlib
+sudo apt-get install zlib1g-dev
+
+#Find directory for zlib library libz.a (in my case, /usr/lib/x86_64-linux-gnu)
+
+#Compile hdf5
 mkdir /usr/local/hdf5
 cd /usr/local/hdf5
 export CC=mpicc
-./configure --enable-parallel --enable-shared --prefix=/usr/local/hdf5
+./configure -with-zlib=LIBZPATH --enable-parallel --enable-shared --prefix=/usr/local/hdf5
 make
 make check
 make install
